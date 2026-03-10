@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Términos de Uso — Moiko</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #FAF8F4;
+    --surface:  #F0EDE6;
+    --wood:     #E8D9C0;
+    --accent:   #A8D8C8;
+    --accent2:  #C9E8DF;
+    --text:     #3D3530;
+    --muted:    #9A8F88;
+    --border:   #E0D9D0;
+    --white:    #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  .blob {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+  }
+  .blob-1 { width: 350px; height: 350px; background: var(--wood); top: -80px; left: -80px; }
+  .blob-2 { width: 300px; height: 300px; background: var(--accent2); bottom: 80px; right: -60px; }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(250,248,244,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1.5px solid var(--border);
+    padding: 1.1rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .logo-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+    margin-bottom: 2px;
+  }
+
+  .nav-links { display: flex; align-items: center; gap: 1rem; }
+
+  .nav-link {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+  .nav-link:hover { color: #5a9e8e; }
+
+  .badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 5rem 2rem 8rem;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent2);
+    color: #5a9e8e;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+
+  h1 .underline-accent {
+    position: relative;
+    display: inline-block;
+  }
+
+  h1 .underline-accent::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; left: 0; right: 0;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+    opacity: 0.5;
+  }
+
+  .meta {
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin-bottom: 3.5rem;
+    padding-bottom: 3rem;
+    border-bottom: 1.5px solid var(--border);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+
+  .pill::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .section-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem 2.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 2px 12px rgba(168,216,200,0.08);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .section-card:hover {
+    box-shadow: 0 4px 24px rgba(168,216,200,0.2);
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .section-num {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: var(--accent2);
+    color: #5a9e8e;
+    font-size: 0.65rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  p { margin-bottom: 0.85rem; font-size: 0.9rem; }
+  p:last-child { margin-bottom: 0; }
+
+  ul { list-style: none; margin: 0.5rem 0; }
+
+  ul li {
+    font-size: 0.9rem;
+    padding: 0.3rem 0 0.3rem 1.5rem;
+    position: relative;
+  }
+
+  ul li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.6rem;
+    top: 0.55rem;
+  }
+
+  a { color: #5a9e8e; text-decoration: none; font-weight: 500; }
+  a:hover { text-decoration: underline; }
+
+  .callout {
+    background: linear-gradient(135deg, var(--accent2) 0%, #ddf2ec 100%);
+    border: 1.5px solid var(--accent);
+    border-radius: 14px;
+    padding: 1rem 1.4rem;
+    margin: 0.85rem 0 0;
+    font-size: 0.87rem;
+    color: #4a8e7e;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    border-top: 1.5px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+
+  .footer-logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<header>
+  <a href="#" class="logo">moiko <span class="logo-dot"></span></a>
+  <nav class="nav-links">
+    <a href="privacy-policy.html" class="nav-link">Privacidad</a>
+    <span class="badge">Legal</span>
+  </nav>
+</header>
+
+<main>
+  <div class="hero-tag">🌿 Documento legal</div>
+  <h1>Términos<br><span class="underline-accent">de Uso</span></h1>
+  <div class="meta">
+    <span class="pill">Última actualización: junio de 2025</span>
+  </div>
+
+  <div class="section-card">
+    <p>Bienvenido a <strong>Moiko</strong>. Al acceder, seguir o interactuar con cualquiera de nuestras cuentas y contenidos en redes sociales, aceptas los siguientes Términos de Uso.</p>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">01</span> Identificación</h2>
+    <p><strong>Moiko</strong> (@iammoikoo) es una marca personal de creación de contenido digital especializado en videojuegos y tecnología, con presencia en TikTok, Instagram, Pinterest, X, Tumblr y YouTube.</p>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">02</span> Propiedad intelectual</h2>
+    <p>Todo el contenido publicado por Moiko — vídeos, imágenes, textos, gráficos y diseños — es propiedad exclusiva de Moiko y está protegido por las leyes de propiedad intelectual.</p>
+    <p>Queda expresamente prohibido:</p>
+    <ul>
+      <li>Reproducir o modificar nuestro contenido sin autorización escrita previa</li>
+      <li>Usar el contenido con fines comerciales sin licencia expresa</li>
+      <li>Atribuir el contenido de Moiko a terceros</li>
+    </ul>
+    <div class="callout">Para colaboraciones o licencias, contacta por mensajes directos en nuestros perfiles oficiales. 🌿</div>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">03</span> Uso permitido del contenido</h2>
+    <p>Autorizamos el uso no comercial bajo estas condiciones:</p>
+    <ul>
+      <li>Citar o compartir con atribución visible a Moiko</li>
+      <li>Uso personal, educativo o informativo sin alterar el contenido</li>
+      <li>Compartir mediante los mecanismos nativos de cada plataforma</li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">04</span> APIs y herramientas de terceros</h2>
+    <p>Moiko utiliza APIs oficiales de redes sociales (Pinterest, TikTok, Instagram, X, YouTube) para la gestión y publicación de contenido, de conformidad con las políticas de cada plataforma.</p>
+    <p>Las credenciales de API son de uso exclusivo de Moiko y no se comparten con terceros.</p>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">05</span> Conducta de los usuarios</h2>
+    <p>Al interactuar con el contenido de Moiko te comprometes a:</p>
+    <ul>
+      <li>Respetar a los demás miembros de la comunidad</li>
+      <li>No publicar contenido ofensivo o ilegal en los comentarios</li>
+      <li>No realizar spam ni actividades fraudulentas</li>
+      <li>No suplantar la identidad de Moiko ni de otros usuarios</li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">06</span> Exención de responsabilidad</h2>
+    <p>El contenido de Moiko tiene carácter informativo y de entretenimiento. No nos hacemos responsables de decisiones tomadas basándose en él, interrupciones del servicio en plataformas de terceros, ni contenido externo enlazado desde nuestros perfiles.</p>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">07</span> Modificaciones</h2>
+    <p>Moiko puede modificar estos Términos en cualquier momento. El uso continuado del contenido implica la aceptación de los términos actualizados.</p>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">08</span> Legislación aplicable</h2>
+    <p>Estos términos se rigen por la legislación española y de la Unión Europea.</p>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">09</span> Contacto</h2>
+    <p>Para cualquier consulta, escríbenos por mensajes directos en nuestros perfiles <strong>@iammoikoo</strong>.</p>
+    <p style="margin-top:0.75rem">Consulta también: <a href="privacy-policy.html">Política de Privacidad →</a></p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-logo">moiko ✦</div>
+  ☁️ © 2025 Moiko · Todos los derechos reservados ☁️
+</footer>
+
+</body>
+</html>

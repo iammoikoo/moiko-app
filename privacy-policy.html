@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — Moiko</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #FAF8F4;
+    --surface:  #F0EDE6;
+    --wood:     #E8D9C0;
+    --accent:   #A8D8C8;
+    --accent2:  #C9E8DF;
+    --text:     #3D3530;
+    --muted:    #9A8F88;
+    --border:   #E0D9D0;
+    --white:    #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  .blob {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+  }
+  .blob-1 { width: 400px; height: 400px; background: var(--accent2); top: -100px; right: -100px; }
+  .blob-2 { width: 300px; height: 300px; background: var(--wood); bottom: 100px; left: -80px; }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(250,248,244,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1.5px solid var(--border);
+    padding: 1.1rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .logo-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+    margin-bottom: 2px;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 5rem 2rem 8rem;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent2);
+    color: #5a9e8e;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+
+  h1 .underline-accent {
+    color: var(--text);
+    position: relative;
+    display: inline-block;
+  }
+
+  h1 .underline-accent::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; left: 0; right: 0;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+    opacity: 0.5;
+  }
+
+  .meta {
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin-bottom: 3.5rem;
+    padding-bottom: 3rem;
+    border-bottom: 1.5px solid var(--border);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+
+  .pill::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .section-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem 2.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 2px 12px rgba(168,216,200,0.08);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .section-card:hover {
+    box-shadow: 0 4px 24px rgba(168,216,200,0.2);
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .section-num {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: var(--accent2);
+    color: #5a9e8e;
+    font-size: 0.65rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  p { margin-bottom: 0.85rem; font-size: 0.9rem; }
+  p:last-child { margin-bottom: 0; }
+
+  ul { list-style: none; margin: 0.5rem 0; }
+
+  ul li {
+    font-size: 0.9rem;
+    padding: 0.3rem 0 0.3rem 1.5rem;
+    position: relative;
+  }
+
+  ul li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.6rem;
+    top: 0.55rem;
+  }
+
+  a { color: #5a9e8e; text-decoration: none; font-weight: 500; }
+  a:hover { text-decoration: underline; }
+
+  .callout {
+    background: linear-gradient(135deg, var(--accent2) 0%, #ddf2ec 100%);
+    border: 1.5px solid var(--accent);
+    border-radius: 14px;
+    padding: 1rem 1.4rem;
+    margin: 0.85rem 0 0;
+    font-size: 0.87rem;
+    color: #4a8e7e;
+  }
+
+  .platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .platform-tag {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    border-top: 1.5px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+
+  .footer-logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<header>
+  <a href="#" class="logo">moiko <span class="logo-dot"></span></a>
+  <span class="badge">Legal</span>
+</header>
+
+<main>
+  <div class="hero-tag">🌿 Documento legal</div>
+  <h1>Política de<br><span class="underline-accent">Privacidad</span></h1>
+  <div class="meta">
+    <span class="pill">Última actualización: junio de 2025</span>
+  </div>
+
+  <div class="section-card">
+    <p>En <strong>Moiko</strong> nos tomamos muy en serio tu privacidad. Esta política describe cómo gestionamos la información de quienes interactúan con nuestro contenido en redes sociales.</p>
+    <div class="callout">Al seguir o interactuar con nuestro contenido, aceptas los términos descritos en esta página. 🌿</div>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">01</span> Responsable del tratamiento</h2>
+    <p><strong>Moiko</strong> es una marca personal de creación de contenido digital especializado en videojuegos y tecnología. Para consultas de privacidad, puedes escribirnos por mensajes directos en cualquiera de nuestros perfiles <strong>@iammoikoo</strong>.</p>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">02</span> Información que recopilamos</h2>
+    <p>Moiko no recopila datos personales de forma directa. Las plataformas de terceros pueden recopilar información según sus propias políticas:</p>
+    <ul>
+      <li>Datos de interacción (likes, comentarios, guardados)</li>
+      <li>Información de navegación y dispositivo (gestionada por cada plataforma)</li>
+      <li>Datos de cuenta si nos sigues o comentas</li>
+      <li>Información que compartes voluntariamente al contactarnos</li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">03</span> Uso de la información</h2>
+    <p>La información se utiliza exclusivamente para:</p>
+    <ul>
+      <li>Mejorar la calidad y relevancia del contenido</li>
+      <li>Responder a consultas y comentarios de la comunidad</li>
+      <li>Analizar métricas de audiencia de forma agregada y anónima</li>
+      <li>Gestionar la distribución de contenido en las distintas plataformas</li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">04</span> Pinterest y APIs de terceros</h2>
+    <p>Moiko utiliza la API oficial de Pinterest para publicar y gestionar contenido en su tablero, cumpliendo con las <a href="https://policy.pinterest.com/es/developer-guidelines" target="_blank">Directrices para Desarrolladores de Pinterest</a>.</p>
+    <p>El acceso a la API se utiliza únicamente para:</p>
+    <ul>
+      <li>Publicar Pines con contenido original de videojuegos y tecnología</li>
+      <li>Gestionar tableros propios de la cuenta Moiko</li>
+      <li>Consultar métricas básicas del contenido publicado</li>
+    </ul>
+    <div class="callout">No accedemos, almacenamos ni procesamos datos de otros usuarios de Pinterest. No vendemos ni compartimos datos con terceros. 🛡️</div>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">05</span> Compartición de datos</h2>
+    <p>Moiko <strong>no vende, alquila ni comparte</strong> información personal de sus seguidores con terceros bajo ningún concepto.</p>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">06</span> Cookies</h2>
+    <p>Este sitio web no utiliza cookies propias. Las plataformas enlazadas pueden usar cookies y píxeles de seguimiento según sus propias políticas.</p>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">07</span> Tus derechos</h2>
+    <p>De acuerdo con el RGPD, tienes derecho a acceder, rectificar, suprimir, oponerte al tratamiento y solicitar la portabilidad de tus datos. Contáctanos por mensajes directos para ejercerlos.</p>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">08</span> Cambios en esta política</h2>
+    <p>Podemos actualizar esta política periódicamente. La fecha al inicio del documento refleja la última actualización. El uso continuado de nuestro contenido implica la aceptación de los cambios.</p>
+  </div>
+
+  <div class="section-card">
+    <h2><span class="section-num">09</span> Contacto</h2>
+    <p>¿Preguntas? Escríbenos por mensajes directos en cualquiera de nuestros perfiles oficiales <strong>@iammoikoo</strong>.</p>
+    <div class="platforms">
+      <span class="platform-tag">☁️ TikTok</span>
+      <span class="platform-tag">☁️ Instagram</span>
+      <span class="platform-tag">☁️ Pinterest</span>
+      <span class="platform-tag">☁️ X</span>
+      <span class="platform-tag">☁️ Tumblr</span>
+      <span class="platform-tag">☁️ YouTube</span>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-logo">moiko ✦</div>
+  ☁️ © 2025 Moiko · Todos los derechos reservados ☁️
+</footer>
+
+</body>
+</html>
